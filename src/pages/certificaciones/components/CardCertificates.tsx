@@ -15,6 +15,7 @@ export const CardCertificates = () => {
             <Image
               alt="Album cover"
               className="object-cover w-full h-full rounded-md"
+              width={"100%"}
               height={200}
               shadow="md"
               src="https://nextui.org/images/album-cover.png"
@@ -52,7 +53,7 @@ export const CardCertificates = () => {
             {/* Botones de categorías y el botón de acción */}
             <div className="flex justify-between items-center mt-6">
               <div className="flex flex-wrap gap-3">
-                <Button size="sm" color="success" className="rounded-2xl">
+                <Button size="sm" variant="shadow" color="success" className="rounded-2xl">
                   Prototyping
                 </Button>
                 <Button
@@ -66,7 +67,7 @@ export const CardCertificates = () => {
                 </Button>
               </div>
 
-              <Button size="sm" className="bg-[#BFED54] rounded-full p-3">
+              <Button size="sm" variant="shadow" className="bg-[#BFED54] rounded-full p-3">
                 {"->"}
               </Button>
             </div>

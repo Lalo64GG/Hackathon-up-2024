@@ -9,6 +9,8 @@ import { Certificaciones } from './pages/certificaciones/index.tsx'
 
 import { OverviewPage } from './pages/overview/index.tsx'
 import { Landing } from './pages/landing/index.tsx'
+import { Scholarships } from './pages/scholarships/index.tsx'
+import { Partnerships } from './pages/scholarships/status/index.tsx'
 
 
 const router = createBrowserRouter([
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
     element:<Layout/>,
     children: [
       { path: '/certificaciones', element: <Certificaciones /> },
+      {path: '/scholarships', element: <Scholarships/>},
+      {path: '/scholarships/status', element: <Partnerships/>},
       { path: '/overview', element: <OverviewPage/>}
     ],
   }, 

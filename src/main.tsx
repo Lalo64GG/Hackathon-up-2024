@@ -15,6 +15,7 @@ const router = createBrowserRouter([
       { path: '/certificaciones', element: <Certificaciones /> },
     ],
   }, 
+  
 ])
 
 createRoot(document.getElementById('root')!).render(

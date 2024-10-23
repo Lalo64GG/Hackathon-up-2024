@@ -10,7 +10,6 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "@nextui-org/react";
-import { ThemeSwitch } from "../../Switcher";
 import { SearchIcon } from "../icons/SearchIcon";
 import { useParams } from "react-router-dom";
 import { FaSun, FaCoins } from "react-icons/fa"; // Importación de íconos necesarios

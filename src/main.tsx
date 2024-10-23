@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Providers } from './shared/components/Provider.tsx'
 import { Layout } from './shared/Layout/NavBar-SideBar.tsx'
 import { Certificaciones } from './pages/certificaciones/index.tsx'
+import { OverviewPage } from './pages/overview/index.tsx'
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     element:<Layout/>,
     children: [
       { path: '/certificaciones', element: <Certificaciones /> },
+      { path: '/overview', element: <OverviewPage/>}
     ],
   }, 
   

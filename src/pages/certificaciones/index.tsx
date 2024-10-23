@@ -2,7 +2,7 @@ import { Tab, Tabs } from "@nextui-org/react";
 import { CardCertificates } from "./components/CardCertificates";
 
 export const Certificaciones = () => {
-  let tabs = [
+  const tabs = [
     { id: "All", label: "All", content: <></> },
     { id: "Code", label: "Code", content: <></> },
     { id: "Design", label: "Design", content: <></> },
@@ -16,7 +16,7 @@ export const Certificaciones = () => {
       <div>
         <main>
           <section>
-            <div className="w-full flex items-center justify-center gap-x-4 ">
+            <div className="flex items-center justify-center w-full gap-x-4 ">
               <div className="dark:bg-[#0F0F0F] w-full lg:w-3/4 h-screen rounded-md ">
                 <Tabs
                   classNames={{
@@ -50,7 +50,7 @@ export const Certificaciones = () => {
               </div>
 
               <div className="dark:bg-[#232121] w-full lg:w-1/6 h-screen rounded-md  hidden lg:flex flex-col flex-grow p-5">
-                <h1 className="text-white mb-4">Contenido Adicional</h1>
+                <h1 className="mb-4 text-white">Contenido Adicional</h1>
                 <p className="text-gray-400">
                   Este es el contenido adicional que solo se muestra en
                   pantallas grandes. Aquí puedes agregar información

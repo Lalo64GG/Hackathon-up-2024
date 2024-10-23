@@ -21,13 +21,11 @@ const router = createBrowserRouter([
     path: '/',
     element:<Layout/>,
     children: [
-      { path: '/certificaciones', element: <Certificaciones /> },
-
-      { path: '/overview', element: <OverviewPage/>},
-      {path: '/perfil', element: <PerfilPage/>}
+      {path: '/certificaciones', element: <Certificaciones /> },
+      {path: '/overview', element: <OverviewPage/>},
+      {path: '/perfil', element: <PerfilPage/>},
       {path: '/scholarships', element: <Scholarships/>},
       {path: '/scholarships/status', element: <Partnerships/>},
-      { path: '/overview', element: <OverviewPage/>}
     ],
   }, 
   

@@ -9,6 +9,7 @@ import { Certificaciones } from './pages/certificaciones/index.tsx'
 
 import { OverviewPage } from './pages/overview/index.tsx'
 import { Landing } from './pages/landing/index.tsx'
+import PerfilPage from './pages/perfil/index.tsx'
 
 
 const router = createBrowserRouter([
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
     element:<Layout/>,
     children: [
       { path: '/certificaciones', element: <Certificaciones /> },
-      { path: '/overview', element: <OverviewPage/>}
+      { path: '/overview', element: <OverviewPage/>},
+      {path: '/perfil', element: <PerfilPage/>}
     ],
   }, 
   

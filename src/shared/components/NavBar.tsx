@@ -1,76 +1,99 @@
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Input, Dropdown, DropdownTrigger, Avatar, DropdownMenu, DropdownItem} from "@nextui-org/react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Input,
+  Dropdown,
+  DropdownTrigger,
+  Avatar,
+  DropdownMenu,
+  DropdownItem,
+} from "@nextui-org/react";
 import { ThemeSwitch } from "../../Switcher";
 import { SearchIcon } from "../icons/SearchIcon";
 import { useParams } from "react-router-dom";
+import { FaSun, FaCoins } from "react-icons/fa"; // Importación de íconos necesarios
 
 export const Nav = () => {
+  const { id } = useParams();
 
-  const {id} = useParams();
-
-  console.log(id)
+  console.log(id);
 
   return (
     <Navbar
-      shouldHideOnScroll
-      className="rounded-2xl dark:bg-[#131212] bg-white"
-      content="responsive"
+      className="rounded-md dark:bg-[#131212] py-2 w-full"
+      maxWidth="full"
     >
-      <NavbarContent>
-        <NavbarBrand>
-          <p className="font-bold text-inherit">Certificados</p>
+      {/* Contenido del lado izquierdo (Título) */}
+      <NavbarContent className="w-full lg:w-auto flex justify-start" justify="start">
+        <NavbarBrand className="text-white">
+          <p className="font-bold text-lg">CERTIFICACIONES</p>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      {/* Contenido central (Buscador) */}
+      <NavbarContent
+        className="hidden md:flex flex-1 justify-center"
+        justify="center"
+      >
         <Input
           classNames={{
-            base: "max-w-full sm:max-w-[10rem] h-10",
-            mainWrapper: "h-full",
-            input: "text-small",
-            inputWrapper: "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
+            base: "max-w-full w-64 md:w-96",
+            inputWrapper:
+              "h-10 rounded-full bg-[#2A2A2A] text-white px-4 placeholder-gray-500",
           }}
-          placeholder="Type to search..."
-          size="sm"
+          placeholder="Search"
           startContent={<SearchIcon size={18} />}
           type="search"
+          aria-label="Search"
         />
       </NavbarContent>
 
-      <NavbarContent justify="end">
-        <NavbarItem>
-          <ThemeSwitch />
+      {/* Contenido del lado derecho */}
+      <NavbarContent className="flex items-center justify-end gap-x-28" justify="end">
+        {/* Puntuación del Usuario */}
+        <NavbarItem className="hidden md:flex items-center gap-1 text-white">
+          <FaCoins size={18} className="text-yellow-400" />
+          <span>6.7k</span>
         </NavbarItem>
-      </NavbarContent>
 
-      <NavbarContent as="div" className="items-center" justify="end">
-        <Dropdown placement="bottom-end">
-          <DropdownTrigger>
-            <Avatar
-              isBordered
-              as="button"
-              className="transition-transform"
-
-              name="Jason Hughes"
-              size="sm"
-              src=""
-            />
-          </DropdownTrigger>
-          <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="profile" className="h-14 gap-2">
-              <p className="font-semibold">Signed in as</p>
-              <p className="font-semibold">zoey@example.com</p>
-            </DropdownItem>
-            <DropdownItem key="settings">My Settings</DropdownItem>
-            <DropdownItem key="team_settings">Team Settings</DropdownItem>
-            <DropdownItem key="analytics">Analytics</DropdownItem>
-            <DropdownItem key="system">System</DropdownItem>
-            <DropdownItem key="configurations">Configurations</DropdownItem>
-            <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-            <DropdownItem key="logout" color="danger">
-              Log Out
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+        {/* Cambio de tema */}
+        <NavbarItem className="hidden md:flex items-center">
+          <FaSun size={20} className="text-yellow-400" />
+        </NavbarItem>
+        
+        {/* Avatar del usuario y nombre */}
+        <div className="flex items-center gap-3">
+          <Dropdown placement="bottom-end">
+            <DropdownTrigger>
+              
+              <Avatar
+                isBordered
+                as="button"
+                className="transition-transform"
+                size="md"
+                src=""
+              />
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Profile Actions" variant="flat">
+              <DropdownItem key="profile" className="h-14 gap-2">
+                <p className="font-semibold">Signed in as</p>
+                <p className="font-semibold">junior.garcia@example.com</p>
+              </DropdownItem>
+              <DropdownItem key="settings">My Settings</DropdownItem>
+              <DropdownItem key="team_settings">Team Settings</DropdownItem>
+              <DropdownItem key="analytics">Analytics</DropdownItem>
+              <DropdownItem key="system">System</DropdownItem>
+              <DropdownItem key="configurations">Configurations</DropdownItem>
+              <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
+              <DropdownItem key="logout" color="danger">
+                Log Out
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+          
+        </div>
       </NavbarContent>
     </Navbar>
   );

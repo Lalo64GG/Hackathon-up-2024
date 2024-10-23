@@ -6,9 +6,12 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Providers } from './shared/components/Provider.tsx'
 import { Layout } from './shared/Layout/NavBar-SideBar.tsx'
 import { Certificaciones } from './pages/certificaciones/index.tsx'
+
+import { OverviewPage } from './pages/overview/index.tsx'
 import { Landing } from './pages/landing/index.tsx'
 import { Scholarships } from './pages/scholarships/index.tsx'
 import { Partnerships } from './pages/scholarships/status/index.tsx'
+
 
 const router = createBrowserRouter([
   {path: '/', element: <Landing/>},
@@ -21,6 +24,7 @@ const router = createBrowserRouter([
       { path: '/certificaciones', element: <Certificaciones /> },
       {path: '/scholarships', element: <Scholarships/>},
       {path: '/scholarships/status', element: <Partnerships/>},
+      { path: '/overview', element: <OverviewPage/>}
     ],
   }, 
   

@@ -27,7 +27,7 @@ export const SideBar = () => {
           />
         </svg>
 
-        <h2 className="text-sm hidden lg:inline-block text-center font-semibold text-white pt-1">
+        <h2 className="hidden pt-1 text-sm font-semibold text-center text-white lg:inline-block">
           GoodActions
         </h2>
       </div>
@@ -35,7 +35,7 @@ export const SideBar = () => {
         <ul className="mt-20">
           <li className={`" hover:cursor-pointer flex items-center mb-8 " ${location.pathname === "/dashboard" ? " mb-8 border-l border-[#BFED54]" : ""}`}>
            <NavLink  to={"/dashboard"} className="flex items-center" >
-           <a className="flex items-center text-white  w-10 h-10 rounded-md justify-center">
+           <a className="flex items-center justify-center w-10 h-10 text-white rounded-md">
               <svg
                 width="24"
                 height="24"
@@ -59,14 +59,14 @@ export const SideBar = () => {
               </svg>
             </a>
            </NavLink>
-            <span className="ml-2 text-sm hidden lg:inline-block text-white">
+            <span className="hidden ml-2 text-sm text-white lg:inline-block">
               Dashboard
             </span>
           </li>
 
           <li className={`" hover:cursor-pointer flex items-center mb-8 " ${location.pathname === "/challenges" ? " mb-8 border-l border-[#BFED54]" : ""}`}>
             <NavLink className="flex items-center "  to={"/challenges"}>
-            <a  className="flex items-center text-white  w-10 h-10 rounded-md justify-center">
+            <a  className="flex items-center justify-center w-10 h-10 text-white rounded-md">
               <svg
                 width="24"
                 height="24"
@@ -104,7 +104,7 @@ export const SideBar = () => {
                 />
               </svg>
             </a>
-            <span className="ml-2 text-sm hidden lg:inline-block text-white">
+            <span className="hidden ml-2 text-sm text-white lg:inline-block">
               Challenges
             </span>
             </NavLink>
@@ -112,7 +112,7 @@ export const SideBar = () => {
 
           <li className={`" hover:cursor-pointer flex items-center mb-8 " ${location.pathname === "/scholarships" ? " border-l border-[#BFED54]" : ""}`}>
            <NavLink to={"/scholarships"} className="flex items-center">
-           <a className="flex items-center text-white  w-10 h-10 rounded-md justify-center">
+           <a className="flex items-center justify-center w-10 h-10 text-white rounded-md">
               <svg
                 width="24"
                 height="24"
@@ -135,7 +135,7 @@ export const SideBar = () => {
                 />
               </svg>
             </a>
-            <span className="ml-2 text-sm hidden lg:inline-block text-white">
+            <span className="hidden ml-2 text-sm text-white lg:inline-block">
               Scholarships
             </span>
            </NavLink>
@@ -143,7 +143,7 @@ export const SideBar = () => {
 
           <li className={`" hover:cursor-pointer flex items-center mb-8 " ${location.pathname === "/profile" ? " mb-8 border-l border-[#BFED54]" : ""}`}>
             <NavLink to={"/profile"} className="flex items-center">
-            <a className="flex items-center text-white  w-10 h-10 rounded-md justify-center">
+            <a className="flex items-center justify-center w-10 h-10 text-white rounded-md">
               <svg
                 width="24"
                 height="24"
@@ -174,13 +174,14 @@ export const SideBar = () => {
                 />
               </svg>
             </a>
-            <span className="ml-2 text-sm hidden lg:inline-block text-white">
+            <span className="hidden ml-2 text-sm text-white lg:inline-block">
               My Profile
             </span>
             </NavLink>
           </li>
         </ul>
-      </section>
+        </section>
+
     </aside>
   );
 };

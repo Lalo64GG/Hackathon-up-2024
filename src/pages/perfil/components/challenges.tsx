@@ -13,7 +13,7 @@ export const Challenges = () => {
   return (
     <div className="flex flex-row w-full gap-x-10">
       {/* Primera columna */}
-      <section className="flex flex-col items-start justify-start w-[46%]">
+      <section className="flex flex-col items-start justify-start w-[48%]">
         <LabelRounded name="Pending challenges" />
 
         <article className="grid grid-cols-2 mt-4 gap-y-3 gap-x-3">
@@ -24,7 +24,7 @@ export const Challenges = () => {
       </section>
 
      
-      <section className="flex flex-col justify-start  w-[54%]">
+      <section className="flex flex-col justify-start  w-[52%]">
         <LabelRounded name="Challenges Completed" />
         <div className="flex flex-col w-full mt-4 gap-y-7">
             {

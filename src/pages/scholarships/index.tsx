@@ -8,19 +8,19 @@ export const Scholarships = () => {
       <div>
         <main className="flex flex-col lg:flex-row gap-8 bg-[#242121] rounded-md">
           {/* Sección izquierda (información de cómo funciona) */}
-          <section className="w-full lg:w-1/2 h-auto p-6 lg:p-8">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-8">How it works?</h1>
-            <p className="text-lg mb-6">
+          <section className="w-full h-auto p-6 lg:w-1/2 lg:p-8">
+            <h1 className="mb-8 text-4xl font-bold lg:text-5xl">How it works?</h1>
+            <p className="mb-6 text-lg">
               On our platform, scholarships are designed to provide opportunities for users
               who may not have the financial means to pay for certifications. Users can apply
               for scholarships based on their reputation score, social impact actions, and
               achievements within the platform. Here's a breakdown of how the scholarship system works:
             </p>
 
-            <h2 className="text-3xl font-semibold mt-10 mb-4">Earning Scholarship</h2>
+            <h2 className="mt-10 mb-4 text-3xl font-semibold">Earning Scholarship</h2>
             
             <div className="mb-6">
-              <h3 className="font-semibold text-xl mb-2">Reputation Score</h3>
+              <h3 className="mb-2 text-xl font-semibold">Reputation Score</h3>
               <p className="text-lg">
                 Users earn reputation points by completing social impact actions (such as
                 volunteering, reforestation, community cleanups) and obtaining certifications.
@@ -29,7 +29,7 @@ export const Scholarships = () => {
             </div>
 
             <div className="mb-6">
-              <h3 className="font-semibold text-xl mb-2">Eligibility</h3>
+              <h3 className="mb-2 text-xl font-semibold">Eligibility</h3>
               <p className="text-lg">
                 Each scholarship has specific requirements, which may include a minimum
                 reputation score, completion of certain social actions, or enrollment in
@@ -38,7 +38,7 @@ export const Scholarships = () => {
             </div>
 
             <div className="mb-6">
-              <h3 className="font-semibold text-xl mb-2">Action-Based Scholarships</h3>
+              <h3 className="mb-2 text-xl font-semibold">Action-Based Scholarships</h3>
               <p className="text-lg">
                 Some scholarships are exclusively available to users who have completed
                 a defined number of social actions. These actions are verified by organizers
@@ -48,8 +48,8 @@ export const Scholarships = () => {
           </section>
 
           {/* Sección derecha (seleccionar certificación) */}
-          <section className="w-full h-auto lg:w-1/2 p-6 lg:p-8  rounded-lg">
-            <h2 className="text-2xl font-semibold mb-6">Select your Certification</h2>
+          <section className="w-full h-auto p-6 rounded-lg lg:w-1/2 lg:p-8">
+            <h2 className="mb-6 text-2xl font-semibold">Select your Certification</h2>
             <div className="mb-6">
               <Input
                 classNames={{
@@ -70,7 +70,7 @@ export const Scholarships = () => {
             </div>
 
             {/* Botón de aplicación */}
-            <div className="mt-8 flex justify-center">
+            <div className="flex justify-center mt-8">
               <Button className="bg-[#BFED54] text-black w-full lg:w-[90%] py-4 text-lg font-semibold rounded-md">
                 Apply
               </Button>

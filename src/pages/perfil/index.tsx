@@ -39,7 +39,7 @@ const childVariants = {
 const PerfilPage = () => {
   return (
     <motion.main
-      className="w-full bg-[#0F0F0F] p-6 rounded-lg ml-2 mt-3"
+      className="w-[99%] bg-[#0F0F0F] p-6 rounded-lg ml-2 mt-3"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

@@ -1,14 +1,15 @@
-import { Nav } from "./shared/components/NavBar"
-import { SideBar } from "./shared/components/SideBar"
-import { Layout } from "./shared/Layout/NavBar-SideBar"
 
+import CreateEvent from './CreateEvent';
+import EndEvent from './EndEvent';
 
 function App() {
   return (
-    <>
-      <Layout/>
-    </>
-  )
+    <div className="App">
+      <h1>Aplicación de Eventos en Vara</h1>
+      <CreateEvent />
+      <EndEvent />
+    </div>
+  );
 }
 
-export default App
+export default App;

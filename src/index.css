@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slider-container {
+    padding: 10px 0px ;
+    margin: 0;
+  }
+  
+/* En tu archivo CSS global, por ejemplo, styles.css */
+
+.scrollbar-hide {
+  /* Ocultar scrollbar en navegadores WebKit (Chrome, Safari) */
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari y Chrome */
+}

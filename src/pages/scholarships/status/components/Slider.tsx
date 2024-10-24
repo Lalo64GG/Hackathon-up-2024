@@ -21,8 +21,8 @@ function SwipeToSlide() {
   slidesToShow: 4, // Ajusta según tus necesidades
   slidesToScroll: 1,
   autoplay: true,
-  speed: 2000,
-  autoplaySpeed: 2000,
+  speed: 5000,
+  autoplaySpeed: 10,
   cssEase: "linear",
   nextArrow: <></>,
   prevArrow: <></>,

@@ -5,8 +5,8 @@ export const FilasTabla = () => {
   return (
     <div className="grid grid-cols-3 gap-4  items-center rounded-lg px-8 py-4">
       <div className="flex items-center">
-        <RadioGroup>
-          <Radio value={""} color="danger" />
+        <RadioGroup defaultValue={"s"}>
+          <Radio value={"s"}  color="success" />
         </RadioGroup>
         <p className="ml-2">UX/UI Design Certification by Google</p>
       </div>

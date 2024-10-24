@@ -1,12 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { SliderEvents } from "./components/SliderEvents";
 import challengeImage from "../../../public/img/challengeImage.png";
 import EventCard from "./components/eventCard";
 import { Organized } from "./components/organized";
 import EventDetails from "./eventDetailt";
+import { Button } from "@nextui-org/react";
+import useSailsContract from "../../shared/utils/hooks/useSailsContract";
+import { useWallet } from "../../context/walletContex";
+import { web3FromAddress } from "@polkadot/extension-dapp";
 
 const EventosPage: React.FC = () => {
+  const { sails, loading } = useSailsContract(); // Usamos sails para el contrato
+  const { accounts } = useWallet(); // Obtenemos las cuentas de la wallet
+  const [loadingTx, setLoadingTx] = useState(false); // Estado de la transacción
+
+  // Función para manejar la creación del evento
+  const handleCreateEvent = async () => {
+    if (!sails || accounts.length === 0) {
+      console.error("Sails o las cuentas no están configuradas correctamente");
+      return;
+    }
+
+    setLoadingTx(true);
+    try {
+      const account = accounts[0].address; // Usamos la primera cuenta disponible
+      const injector = await web3FromAddress(account); // Obtenemos el signer desde la cuenta
+
+      // Llamamos al contrato inteligente para crear el evento
+      const transaction = sails.services.Event.functions.Create(1000, "Evento1")
+        .withAccount(account, { signer: injector.signer });
+
+      await transaction.calculateGas(); // Calculamos el gas necesario
+      const { msgId, txHash, response } = await transaction.signAndSend();
+
+      console.log('Evento creado:', msgId, txHash);
+      alert(`Evento creado ${msgId}, ${txHash}`);
+      const result = await response();
+      console.log('Resultado del contrato:', result);
+    } catch (error) {
+      console.error('Error al crear el evento:', error);
+    } finally {
+      setLoadingTx(false);
+    }
+  };
+
   // Variantes de animación moderna
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.95, y: 50 },
@@ -114,14 +152,13 @@ const EventosPage: React.FC = () => {
               <EventDetails />
             </motion.div>
 
-            <motion.button
+            <Button
               className="bg-[#BFED54] text-black mt-8 py-2 px-6 rounded-full font-bold shadow-lg"
-              variants={buttonVariants}
-              whileHover="hover"
-              whileTap="tap"
+              onClick={handleCreateEvent} // Asignamos el manejador de evento
+              disabled={loadingTx} // Deshabilitamos el botón si la transacción está en curso
             >
-              Apply
-            </motion.button>
+              {loadingTx ? 'Creando...' : 'Apply'}
+            </Button>
           </motion.section>
         </motion.div>
 

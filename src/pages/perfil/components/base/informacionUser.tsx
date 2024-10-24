@@ -11,8 +11,8 @@ export const InformacionUser = ({name,email,level,description}:InformacionUserPr
         <>
         <div className="grid items-center grid-cols-2 mx-5">
             <section className="flex flex-col">
-            <h2 className="text-xl font-semibold">{name}</h2>
-            <p className="text-tiny">{email}</p>
+            <h2 className="text-3xl font-bold">{name}</h2>
+            <p className="text-tiny opacity-90">{email}</p>
             </section>
             <section className="flex flex-col items-end gap-y-2">
                 <p>Reputation - <span className="text-[#DCCE0A]">level {level}</span></p>

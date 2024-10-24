@@ -29,7 +29,7 @@ export const Certificaciones = () => {
                 <Tabs
                   classNames={{
                     tabList:
-                      "gap-6 px-2 relative rounded-lg overflow-x-auto flex justify-start lg:justify-start items-center",
+                      "gap-6 px-2 relative rounded-lg overflow-x-auto flex justify-start lg:justify-start items-center ",
                     tab: `px-6 py-3 h-12 text-base font-semibold 
                           text-gray-300 hover:text-white focus:text-white whitespace-nowrap 
                           transition-colors duration-300 ease-in-out`,
@@ -42,7 +42,7 @@ export const Certificaciones = () => {
                 >
                   {tabs.map((tab) => (
                     <Tab key={tab.id} title={tab.label}>
-                      <div className="max-h-[70vh] overflow-y-auto space-y-6 p-4">
+                      <div className="max-h-[70vh] overflow-y-auto space-y-6 p-4 scrollbar-hide">
                         {[...Array(6)].map((_, index) => (
                           <CardWithAnimation key={index} />
                         ))}

@@ -11,10 +11,10 @@ export const ChallengesCompleted = ({
   tokenRecibed,
 }: ChallengeCompletedProps) => {
   return (
-    <section className="grid items-center w-full grid-cols-[3fr,1fr,1fr]  gap-x-4">
+    <section className="grid items-center w-full grid-cols-[3fr,1fr,1fr]   gap-x-4 ">
       {/* Primera columna más grande */}
       <div className="flex flex-row items-center w-full gap-x-3">
-        <img src={rewardIcon} className="w-5 h-5" alt="" />
+        <img src={rewardIcon} className="" alt="" />
         <p>{lugar}</p>
       </div>
 

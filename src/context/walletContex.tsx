@@ -1,12 +1,13 @@
-import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
+import { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { web3Accounts, web3Enable } from '@polkadot/extension-dapp';
-import { ApiPromise, WsProvider } from '@polkadot/api'; // Polkadot API para la conexión a Vara Network
+import { GearApi } from '@gear-js/api'; // Cambiar a GearApi
+import { WsProvider } from '@polkadot/api'; // El proveedor sigue siendo el mismo
 
 // Definir la interfaz del contexto
 interface WalletContextType {
   accounts: any[];
   connectWallet: () => Promise<void>;
-  api: ApiPromise | null;
+  api: GearApi | null; // Usamos GearApi en lugar de ApiPromise
 }
 
 // Crear el contexto con un valor inicial vacío
@@ -24,7 +25,7 @@ export const useWallet = (): WalletContextType => {
 // Proveedor de contexto para la wallet
 export const WalletProvider = ({ children }: { children: ReactNode }) => {
   const [accounts, setAccounts] = useState<any[]>([]);
-  const [api, setApi] = useState<ApiPromise | null>(null);
+  const [api, setApi] = useState<GearApi | null>(null);
 
   // Función para conectar la wallet
   const connectWallet = async () => {
@@ -38,11 +39,11 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
     setAccounts(allAccounts);
   };
 
-  // Función para conectar a Vara Network
+  // Función para conectar a Vara Network usando GearApi
   const connectVaraNetwork = async () => {
     try {
       const provider = new WsProvider('wss://testnet.vara.network');
-      const apiInstance = await ApiPromise.create({ provider });
+      const apiInstance = await GearApi.create({ provider }); // Usamos GearApi.create()
       setApi(apiInstance);
       console.log('Conectado a la red Vara:', apiInstance.genesisHash.toHex());
     } catch (error) {

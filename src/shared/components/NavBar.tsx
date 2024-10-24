@@ -21,7 +21,7 @@ export const Nav = () => {
 
   return (
     <Navbar
-      className="rounded-md dark:bg-[#131212] py-2 w-full"
+      className="rounded-2xl dark:bg-[#131212]  w-full"
       maxWidth="full"
     >
       {/* Contenido del lado izquierdo (Título) */}
